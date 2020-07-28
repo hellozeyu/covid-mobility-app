@@ -1,3 +1,7 @@
+'''
+Define all the callbacks on each page
+'''
+
 from dash.dependencies import Input, Output
 from app import app
 import plotly.express as px
@@ -5,6 +9,7 @@ import dash_bootstrap_components as dbc
 import dash_html_components as html
 import pandas as pd
 
+# Read the picked data frame from the project folder
 df = pd.read_pickle("app.data")
 
 CARD_KEYS = ['retail', 'grocery', 'parks', 'transit', 'workplaces', 'residential']

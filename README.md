@@ -2,7 +2,7 @@
 - This analysis is based on the [COVID-19 Community Mobility Reports](https://www.google.com/covid19/mobility/index.html?hl=en) created by Google. The reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.
 - In order to run the analysis, make sure you download the [original dataset](https://www.google.com/covid19/mobility/index.html?hl=en) from Google and run all the code chunks in the `data_cleaning.ipynb` to create the cleaned dataframe that only focuses on the trend in the U.S
 - I also combined it with the [COVID-19 dataset](https://github.com/nytimes/covid-19-data) from New York Times, trying to find how people from different states are responding to the number of confirmed cases and deaths.
-- The analysis can be found in the `data_analysis.ipynb` notebook. I also built a [Plotly Dash]([Dash](https://plot.ly/dash) App on top it.
+- The analysis can be found in the `data_analysis.ipynb` notebook. I also built a [Plotly Dash](https://plot.ly/dash) app on top that.
 
 
 ### Project structure

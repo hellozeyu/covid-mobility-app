@@ -1,8 +1,12 @@
+'''
+Define the layouts of each page/url
+'''
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-from callbacks import df
+from callbacks import df # import the df loaded from callbacks so we don't need to load it again
 
+# the layout of homepage
 homepage_layout = html.Div(
                 [
                     dbc.Row(
@@ -39,9 +43,6 @@ homepage_layout = html.Div(
                 ]
 )
 
-
-
-
 # the style arguments for the sidebar. We use position:fixed and a fixed width
 # this allows us to have the sidebar unmoved on the left side of the page
 SIDEBAR_STYLE = {
@@ -54,19 +55,13 @@ SIDEBAR_STYLE = {
     "background-color": "#f8f9fa",
 }
 
-# the styles for the main content position it to the right of the sidebar and
-# add some padding.
-CONTENT_STYLE = {
-    "margin-left": "18rem",
-    "margin-right": "2rem",
-    "padding": "2rem 1rem",
-}
-
+# save all the parameters of the pages for easy accessing
 PAGES = [
     {'children': 'Home', 'href': '/', 'id': 'home'},
     {'children': 'Correlation', 'href': '/correlation', 'id': 'correlation-page'}
 ]
 
+# the layout of the sidebar
 sidebar_layout = html.Div(
     [
         html.Div([
@@ -76,9 +71,6 @@ sidebar_layout = html.Div(
                             ])
                     ]),
         html.Hr(),
-        # html.P(
-        #     "A simple sidebar layout with navigation links", className="lead"
-        # ),
         dbc.Nav(
             [
                 dbc.NavLink(**page) for page in PAGES
@@ -90,23 +82,9 @@ sidebar_layout = html.Div(
     style=SIDEBAR_STYLE
 )
 
-# content = html.Div(id="page-content", style=CONTENT_STYLE)
-
-card_content = [
-    dbc.CardBody(
-        [
-            html.H5("Card title", className="card-title"),
-            html.P(
-                "This is some card content that we'll reuse",
-                className="card-text",
-            ),
-        ]
-    ),
-]
-
 CARD_KEYS = ['retail', 'grocery', 'parks', 'transit', 'workplaces', 'residential']
 
-
+# the layout of the correlation page
 correlation_layout = html.Div(children=[
         dcc.Dropdown(
             id='state-dropdown',
@@ -152,3 +130,11 @@ correlation_layout = html.Div(children=[
             }
         ),
 ])
+
+# the styles for the main content position it to the right of the sidebar and
+# add some padding.
+CONTENT_STYLE = {
+    "margin-left": "18rem",
+    "margin-right": "2rem",
+    "padding": "2rem 1rem",
+}

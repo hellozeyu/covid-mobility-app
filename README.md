@@ -1,19 +1,20 @@
 ### Introduction
 - This analysis is based on the [COVID-19 Community Mobility Reports](https://www.google.com/covid19/mobility/index.html?hl=en) created by Google. The reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.
 - In order to run the analysis, make sure you download the [original dataset](https://www.google.com/covid19/mobility/index.html?hl=en) from Google and run all the code chunks in the `data_cleaning.ipynb` to create the cleaned dataframe that only focuses on the trend in the U.S
-- I also combined it with the [COVID-19 dataset](https://github.com/nytimes/covid-19-data) from New York Times, trying to find how people from different states are responding to the number of confirmed cases and deaths.
-- The analysis can be found in the `data_analysis.ipynb` notebook. I also built a [Plotly Dash](https://plot.ly/dash) app on top that.
-
+- In order to find the correlation between COVID cases and the mobility trend, I also combined it with the [COVID-19 dataset](https://github.com/nytimes/covid-19-data) from New York Times. There is also an interesting pattern of how people from different states are responding to the number of confirmed cases and deaths.
+- The analysis can be found in the `data_analysis.ipynb` notebook. There is also a [Plotly Dash](https://plot.ly/dash) app built on top that. You can find how to run the app in the README file.
 <hr>
 
 ### How to run the Dash app
 **Step 1:**
-You can either use the virtual env that is provided in this repo
- - On macOS and Linux:
- `source env/bin/activate`
- - On Windows:
-`.\env\Scripts\activate`
-
+You can either create a virtual env to work on this project (**recommended**)
+```
+ pip install virtualenv
+ virtualenv venv
+ source venv/bin/activate   # Mac OS/Linux
+ .\venv\Scripts\activate    # Windows
+ pip install -r requirements.txt
+```
 or you can install all the dependencies manually by running `pip install -r requirements.txt` 
 
 **Step 2:**
@@ -25,7 +26,7 @@ Check the app locally at `http://127.0.0.1:8050/`
 <hr>
 
 ### How to use this project as a boilerplate to build your own app
-Example project structure for multiple page/url app
+Most of the examples on the [Plotly gallery](https://dash-gallery.plotly.host/Portal/) are single page app so that they don't give you a clear picture how should you structure the files when you are building something slightly more complicated, i.e a multiple page app. This is what I would recommend as a flat layout project structure.
 
     ├── app.py                  # where Dash instance is defined
     ├── index.py                # the entry point for running the app

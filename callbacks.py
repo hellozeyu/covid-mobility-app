@@ -33,7 +33,7 @@ def update_card_value(value):
     state_df = df.loc[df.state==value].copy()
     state_df['new_cases'] = state_df['cases'].diff()
     state_df['new_deaths'] = state_df['deaths'].diff()
-    correlations = state_df.corr().loc[:'residential', 'new_deaths']
+    correlations = state_df.corr().loc[:'residential', 'new_cases']
     return [dbc.Card(dbc.CardBody(
         [
             html.H5(key.title(), className="card-title"),
